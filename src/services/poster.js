@@ -28,16 +28,25 @@ export const poster = {
       return { success: false, error: 'No memes available in library or internet' };
     }
 
+    // Determine clean title & description without redundancy
+    const title = meme.title || 'Humor Drop';
+    const description = (meme.caption && meme.caption !== title && !meme.caption.includes('Elite Circle Humor')) 
+      ? `*${meme.caption}*` 
+      : null;
+
     const embed = new EmbedBuilder()
       .setColor(config.colors.memeColor)
-      .setTitle(`🎭 ${meme.title || 'Elite Circle Humor'}`)
-      .setDescription(meme.caption ? `*${meme.caption}*` : null)
+      .setTitle(`🎭 ${title}`)
       .setImage(meme.imageUrl)
       .setFooter({
-        text: `${config.branding.footerText} • Meme Drop (Every 15m)${meme.upvotes ? ` • ⭐ ${meme.upvotes.toLocaleString()} upvotes` : ''}`,
+        text: 'The Elite Circle • Humor',
         iconURL: config.branding.iconUrl
       })
       .setTimestamp();
+
+    if (description) {
+      embed.setDescription(description);
+    }
 
     try {
       const message = await channel.send({ embeds: [embed] });
@@ -46,7 +55,7 @@ export const poster = {
         category: 'memes',
         channelId: channel.id,
         itemId: meme.id || 'online',
-        summary: meme.title || meme.caption || 'Meme'
+        summary: title
       });
       return { success: true, messageId: message.id, meme };
     } catch (err) {
@@ -56,18 +65,16 @@ export const poster = {
   },
 
   /**
-   * Post Daily Motivation to a specific channel
+   * Post Daily Motivation to a specific channel (Clean & Minimalist)
    */
   async postMotivation(channel, guildId, options = {}) {
     if (!channel) return { success: false, error: 'Channel is null or undefined' };
 
     let motivation = null;
-    let isAiGenerated = false;
 
     // Try Gemini AI if available (unless localOnly is requested)
     if (config.geminiApiKey && !options.localOnly) {
       motivation = await internetFetcher.generateGeminiMotivation();
-      if (motivation) isAiGenerated = true;
     }
 
     // Fallback to local database library
@@ -82,15 +89,15 @@ export const poster = {
     const embed = new EmbedBuilder()
       .setColor(config.colors.gold)
       .setAuthor({
-        name: 'THE ELITE CIRCLE • DAILY MORNING MOTIVATION',
+        name: 'THE ELITE CIRCLE',
         iconURL: config.branding.iconUrl
       })
-      .setTitle(`⚡ ${motivation.category || 'Discipline & Excellence'}`)
+      .setTitle(`⚡ ${motivation.category || 'Daily Motivation'}`)
       .setDescription(
-        `>>> **"${motivation.quote}"**\n\n— *${motivation.author}*`
+        `>>> *" ${motivation.quote.trim()} "*\n\n— **${motivation.author.trim()}**`
       )
       .setFooter({
-        text: `${config.branding.footerText} • Daily Dose (1x/Day)${isAiGenerated ? ' • 🤖 Gemini AI Curated' : ''}`,
+        text: 'The Elite Circle • Daily Motivation',
         iconURL: config.branding.iconUrl
       })
       .setTimestamp();
@@ -112,18 +119,16 @@ export const poster = {
   },
 
   /**
-   * Post Trending Book Page & Business / Social Skills wisdom
+   * Post Trending Book Page & Business / Social Skills wisdom (Clean & Minimalist)
    */
   async postBookQuote(channel, guildId, options = {}) {
     if (!channel) return { success: false, error: 'Channel is null or undefined' };
 
     let book = null;
-    let isAiGenerated = false;
 
     // Try Gemini AI if available (unless localOnly is requested)
     if (config.geminiApiKey && !options.localOnly) {
       book = await internetFetcher.generateGeminiBookInsight();
-      if (book) isAiGenerated = true;
     }
 
     // Fallback to local database library
@@ -138,25 +143,25 @@ export const poster = {
     const embed = new EmbedBuilder()
       .setColor(config.colors.cyberBlue)
       .setAuthor({
-        name: 'THE ELITE CIRCLE • BOOK WISDOM & SKILLS MASTERY',
+        name: 'THE ELITE CIRCLE',
         iconURL: config.branding.iconUrl
       })
       .setTitle(`📖 ${book.bookTitle}`)
       .setDescription(`*by ${book.author}* • \`${book.category || 'Business & Social Skills'}\``)
       .addFields(
         {
-          name: '📑 Key Page Excerpt',
-          value: `> "${book.quoteOrPage}"`,
+          name: 'Insight',
+          value: `> "${book.quoteOrPage.trim()}"`,
           inline: false
         },
         {
-          name: '🎯 Actionable Takeaway / Social & Business Skill',
-          value: book.takeaway || 'Implement this strategy in your conversations and decisions today.',
+          name: 'Takeaway',
+          value: book.takeaway.trim(),
           inline: false
         }
       )
       .setFooter({
-        text: `${config.branding.footerText} • Masterclass (2x/Day)${isAiGenerated ? ' • 🤖 Gemini AI Deep Dive' : ''}`,
+        text: 'The Elite Circle • Book Wisdom',
         iconURL: config.branding.iconUrl
       })
       .setTimestamp();

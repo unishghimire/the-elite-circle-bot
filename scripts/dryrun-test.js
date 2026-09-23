@@ -125,13 +125,13 @@ async function runTests() {
   assert(memePostRes.success === true, 'Meme embed generated and sent to channel');
   assert(typeof postedMessages[0].embeds[0].data.title === 'string' && postedMessages[0].embeds[0].data.title.length > 0, 'Meme embed contains title');
 
-  const motPostRes = await poster.postMotivation(mockChannel, testGuildId);
+  const motPostRes = await poster.postMotivation(mockChannel, testGuildId, { localOnly: true });
   assert(motPostRes.success === true, 'Daily motivation embed generated and sent to channel');
-  assert(postedMessages[1].embeds[0].data.author.name.includes('DAILY MORNING MOTIVATION'), 'Motivation embed contains branding header');
+  assert(postedMessages[1].embeds[0].data.author.name.includes('THE ELITE CIRCLE'), 'Motivation embed contains clean branding header');
 
-  const bookPostRes = await poster.postBookQuote(mockChannel, testGuildId);
+  const bookPostRes = await poster.postBookQuote(mockChannel, testGuildId, { localOnly: true });
   assert(bookPostRes.success === true, 'Book wisdom embed generated and sent to channel');
-  assert(postedMessages[2].embeds[0].data.author.name.includes('BOOK WISDOM'), 'Book embed contains book branding header');
+  assert(postedMessages[2].embeds[0].data.author.name.includes('THE ELITE CIRCLE'), 'Book embed contains clean branding header');
 
   // Summary
   console.log('\n====================================================');
