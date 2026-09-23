@@ -10,26 +10,30 @@ import { db } from '../database/db.js';
  * 3. Curated trending business and social skills book lessons
  */
 
-// Curated subreddits for high-status, witty, relatable, and business/tech humor
-const MEME_SUBREDDITS = [
-  'wholesomememes',
-  'ProgrammerHumor',
-  'me_irl',
-  'memes',
-  'AdviceAnimals'
+// Curated subreddits dedicated 100% to AI, AI Agents, LLMs, and Machine Learning
+const AI_MEME_SUBREDDITS = [
+  'aimemes',
+  'ChatGPT',
+  'OpenAI',
+  'singularity',
+  'LocalLLaMA',
+  'ArtificialInteligence'
 ];
+
+// Keywords to verify AI relevance for general tech memes
+const AI_REGEX = /\b(ai|agent|agents|llm|gpt|chatgpt|claude|gemini|openai|anthropic|deepseek|copilot|cursor|token|prompt|hallucinat|agi|robot|model|neural|machine learning|vibe coding|bot|rlhf|diffusion)\b/i;
 
 export const internetFetcher = {
   /**
-   * Fetches the HIGHEST UPVOTED, safest memes from the internet.
-   * Ranks by upvotes so only top-tier content is posted.
+   * Fetches the HIGHEST UPVOTED AI & AI Agent memes from the internet.
+   * Only returns memes strictly about AI, AI agents, LLMs, and technology models.
    */
   async fetchBestInternetMeme() {
-    const subreddit = MEME_SUBREDDITS[Math.floor(Math.random() * MEME_SUBREDDITS.length)];
+    const subreddit = AI_MEME_SUBREDDITS[Math.floor(Math.random() * AI_MEME_SUBREDDITS.length)];
     
     // Method 1: High-speed Verified Meme API (Direct Reddit images, upvote-ranked)
     try {
-      const apiRes = await axios.get(`https://meme-api.com/gimme/${subreddit}/5`, { timeout: 5000 });
+      const apiRes = await axios.get(`https://meme-api.com/gimme/${subreddit}/8`, { timeout: 5000 });
       if (apiRes.data?.memes?.length > 0) {
         // Filter for safe, direct image URLs (.jpg, .png, .webp, .jpeg)
         const safeMemes = apiRes.data.memes
@@ -41,7 +45,7 @@ export const internetFetcher = {
           return {
             title: best.title,
             imageUrl: best.url,
-            caption: `⚡ Trending on r/${best.subreddit} • ${best.ups ? best.ups.toLocaleString() : '🔥'} upvotes`,
+            caption: `🤖 AI & Agent Humor • r/${best.subreddit} • ${best.ups ? best.ups.toLocaleString() : '🔥'} upvotes`,
             source: `r/${best.subreddit}`,
             upvotes: best.ups || 0
           };
@@ -49,6 +53,29 @@ export const internetFetcher = {
       }
     } catch (err) {
       // Fall through to Method 2
+    }
+
+    // Method 2: ProgrammerHumor strictly filtered for AI & Agent topics
+    try {
+      const progRes = await axios.get(`https://meme-api.com/gimme/ProgrammerHumor/15`, { timeout: 5000 });
+      if (progRes.data?.memes?.length > 0) {
+        const aiMemes = progRes.data.memes
+          .filter(m => !m.nsfw && m.url && !m.url.endsWith('.gifv') && AI_REGEX.test(m.title))
+          .sort((a, b) => (b.ups || 0) - (a.ups || 0));
+
+        if (aiMemes.length > 0) {
+          const best = aiMemes[0];
+          return {
+            title: best.title,
+            imageUrl: best.url,
+            caption: `🤖 AI Agent Meme • r/ProgrammerHumor • ${best.ups ? best.ups.toLocaleString() : '🔥'} upvotes`,
+            source: `r/ProgrammerHumor`,
+            upvotes: best.ups || 0
+          };
+        }
+      }
+    } catch (err) {
+      // Fallback
     }
 
     // Method 2: Direct Reddit Top JSON

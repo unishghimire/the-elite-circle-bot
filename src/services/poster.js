@@ -37,11 +37,11 @@ export const poster = {
       : null;
 
     const embed = new EmbedBuilder()
-      .setColor(config.colors.memeColor)
-      .setTitle(`🎭 ${title}`)
+      .setColor(0x00F0FF) // Cyber / AI Neon Cyan
+      .setTitle(`🤖 ${title}`)
       .setImage(meme.imageUrl)
       .setFooter({
-        text: 'The Elite Circle • Humor',
+        text: 'The Elite Circle • AI & Agent Memes',
         iconURL: config.branding.iconUrl
       })
       .setTimestamp();
