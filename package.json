@@ -1,0 +1,30 @@
+{
+  "name": "elite-circle-meme-motivation-bot",
+  "version": "1.0.0",
+  "description": "Automated Discord bot for The Elite Circle server that schedules memes, daily motivation, and business & social skill book highlights.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "deploy-commands": "node src/deploy-commands.js",
+    "seed": "node -e \"import('./src/database/seeds.js').then(m => m.seedDatabase())\"",
+    "test": "node scripts/dryrun-test.js"
+  },
+  "keywords": [
+    "discord-bot",
+    "memes",
+    "motivation",
+    "business-books",
+    "social-skills",
+    "scheduler"
+  ],
+  "author": "The Elite Circle",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
+    "node-cron": "^3.0.3"
+  }
+}

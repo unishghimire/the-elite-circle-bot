@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment & Secrets (DO NOT COMMIT)
+.env
+.env.local
+*.env
+
+# Local Runtime Data
+data/guilds.json
+data/history.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

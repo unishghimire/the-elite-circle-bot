@@ -1,0 +1,142 @@
+[
+  {
+    "id": "meme_1",
+    "imageUrl": "https://i.imgflip.com/1g8my4.jpg",
+    "title": "Two Buttons: Sleep vs Code & Build Wealth",
+    "caption": "When you know you should sleep at 1 AM vs pushing that one game-changing feature 🚀",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:56:51.307Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_2",
+    "imageUrl": "https://i.imgflip.com/26am.jpg",
+    "title": "Distracted Boyfriend: Shiny New Ideas vs Daily Consistency",
+    "caption": "Me trying to stick to my business model when a new trend drops 👀",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T02:00:14.770Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_3",
+    "imageUrl": "https://i.imgflip.com/1ur9b0.jpg",
+    "title": "Roll Safe Brain: You Cant Fail If You Dont Stop",
+    "caption": "Cant face market competition if you create your own category 🧠⚡",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:56:38.566Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_4",
+    "imageUrl": "https://i.imgflip.com/261o3j.jpg",
+    "title": "Buff Doge vs Cheems: Founders in 2010 vs 2026",
+    "caption": "2010: Wrote a distributed compiler in a garage. 2026: The AI generated 3 errors and I need emotional support 🐶",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:56:38.478Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_5",
+    "imageUrl": "https://i.imgflip.com/30b1gx.jpg",
+    "title": "Drake Hotline Bling: Excuses vs Extreme Ownership",
+    "caption": "Top: Blaming the market and algorithm. Bottom: Fixing the offer and closing clients 💼",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T02:05:41.513Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_6",
+    "imageUrl": "https://i.imgflip.com/1bhk.jpg",
+    "title": "Disaster Girl: Watching Your Automated System Run Perfectly",
+    "caption": "Watching your automated bots handle business operations while sipping morning coffee ☕🔥",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:57:03.085Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_7",
+    "imageUrl": "https://i.imgflip.com/43a45p.jpg",
+    "title": "Bernie Sanders: I am once again asking for your focus",
+    "caption": "I am once again asking you to close those 47 open browser tabs and execute your #1 priority task 📈",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:56:51.325Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_8",
+    "imageUrl": "https://i.imgflip.com/2cp1.jpg",
+    "title": "Grandma Finds The Internet",
+    "caption": "When the intern discovers that the entire company infrastructure is powered by a bash script written in 2018 💻",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:57:03.073Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_9",
+    "imageUrl": "https://i.imgflip.com/1otk96.jpg",
+    "title": "Change My Mind: Compounding Habits Beats Genius",
+    "caption": "Consistency and clear feedback loops beat raw intelligence every single time. Change my mind ☕",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T02:05:41.537Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_10",
+    "imageUrl": "https://i.imgflip.com/2wifvo.jpg",
+    "title": "Clown Makeup Progression: Ignoring Good Advice",
+    "caption": "Stage 1: \"I don't need to read books.\" Stage 4: \"Why does no one reply to my sales outreach?\" 🤡",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T02:00:14.748Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "meme_1790128598531_ce40q",
+    "imageUrl": "https://example.com/elite_meme.png",
+    "caption": "Custom Test Meme",
+    "title": "Custom Test Meme",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T01:56:38.537Z"
+  },
+  {
+    "id": "meme_1790128611318_q9rus",
+    "imageUrl": "https://example.com/elite_meme.png",
+    "caption": "Custom Test Meme",
+    "title": "Custom Test Meme",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T01:56:51.318Z"
+  },
+  {
+    "id": "meme_1790128623080_2gctm",
+    "imageUrl": "https://example.com/elite_meme.png",
+    "caption": "Custom Test Meme",
+    "title": "Custom Test Meme",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T01:57:03.080Z"
+  },
+  {
+    "id": "meme_1790128814762_e2fqb",
+    "imageUrl": "https://example.com/elite_meme.png",
+    "caption": "Custom Test Meme",
+    "title": "Custom Test Meme",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T02:00:14.762Z"
+  },
+  {
+    "id": "meme_1790129141528_hgar1",
+    "imageUrl": "https://example.com/elite_meme.png",
+    "caption": "Custom Test Meme",
+    "title": "Custom Test Meme",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T02:05:41.528Z"
+  }
+]

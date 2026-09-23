@@ -1,0 +1,187 @@
+[
+  {
+    "id": "mot_1",
+    "quote": "The secret of change is to focus all of your energy, not on fighting the old, but on building the new.",
+    "author": "Socrates",
+    "category": "Focus & Vision",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:56:38.492Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_2",
+    "quote": "We don’t rise to the level of our expectations, we fall to the level of our training.",
+    "author": "Archilochus",
+    "category": "Discipline",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:56:51.330Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_3",
+    "quote": "If you want to live an exceptional life, you must give up the desire to be normal. Average habits yield average outcomes.",
+    "author": "The Elite Circle Codex",
+    "category": "Elite Standards",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:56:51.310Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_4",
+    "quote": "Discipline is choosing between what you want now and what you want most.",
+    "author": "Abraham Lincoln",
+    "category": "Self-Control",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:57:03.075Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_5",
+    "quote": "You will never change your life until you change something you do daily. The secret of your success is found in your daily routine.",
+    "author": "John C. Maxwell",
+    "category": "Consistency",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_6",
+    "quote": "First say to yourself what you would be; and then do what you have to do.",
+    "author": "Epictetus",
+    "category": "Stoic Execution",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T01:57:03.089Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_7",
+    "quote": "The cost of being disciplined is always less than the price of regret.",
+    "author": "Nido Qubein",
+    "category": "Mindset",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T02:00:14.750Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_8",
+    "quote": "Do not pray for an easy life, pray for the strength to endure a difficult one.",
+    "author": "Bruce Lee",
+    "category": "Strength & Grit",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T02:05:41.516Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_9",
+    "quote": "The master has failed more times than the beginner has even tried.",
+    "author": "Stephen McCranie",
+    "category": "Mastery",
+    "timesPosted": 1,
+    "lastPostedAt": "2026-09-23T02:00:14.773Z",
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_10",
+    "quote": "He who has a why to live can bear almost any how.",
+    "author": "Friedrich Nietzsche",
+    "category": "Purpose & Will",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_11",
+    "quote": "Success isn’t owned, it’s leased. And rent is due every single day.",
+    "author": "J.J. Watt",
+    "category": "Daily Hustle",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_12",
+    "quote": "Waste no more time arguing what a good man should be. Be one.",
+    "author": "Marcus Aurelius",
+    "category": "Action Over Words",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_13",
+    "quote": "The only person you are destined to become is the person you decide to be.",
+    "author": "Ralph Waldo Emerson",
+    "category": "Sovereignty",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_14",
+    "quote": "Obsessed is just a word the lazy use to describe the dedicated.",
+    "author": "Russell Warren",
+    "category": "Focus",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_15",
+    "quote": "If you are the smartest person in the room, you are in the wrong room. Surround yourself with giants.",
+    "author": "Confucius",
+    "category": "Network & Standards",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "addedBy": "system"
+  },
+  {
+    "id": "mot_1790128598545_5ygwi",
+    "quote": "Stay hungry, stay foolish.",
+    "author": "Steve Jobs",
+    "category": "Innovation",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T01:56:38.545Z"
+  },
+  {
+    "id": "mot_1790128611319_2s9xx",
+    "quote": "Stay hungry, stay foolish.",
+    "author": "Steve Jobs",
+    "category": "Innovation",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T01:56:51.319Z"
+  },
+  {
+    "id": "mot_1790128623081_73xaq",
+    "quote": "Stay hungry, stay foolish.",
+    "author": "Steve Jobs",
+    "category": "Innovation",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T01:57:03.081Z"
+  },
+  {
+    "id": "mot_1790128814764_4t3sp",
+    "quote": "Stay hungry, stay foolish.",
+    "author": "Steve Jobs",
+    "category": "Innovation",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T02:00:14.764Z"
+  },
+  {
+    "id": "mot_1790129141530_8ddsc",
+    "quote": "Stay hungry, stay foolish.",
+    "author": "Steve Jobs",
+    "category": "Innovation",
+    "addedBy": "AdminUser#0001",
+    "timesPosted": 0,
+    "lastPostedAt": null,
+    "createdAt": "2026-09-23T02:05:41.530Z"
+  }
+]
