@@ -66,7 +66,7 @@ async function runTests() {
   // Test 5: Dynamic Admin Additions
   console.log('\n--- TEST 5: Dynamic Content Additions by Admin ---');
   const customMeme = db.addMeme({
-    imageUrl: 'https://example.com/elite_meme.png',
+    imageUrl: 'https://i.imgflip.com/1g8my4.jpg',
     caption: 'Custom Test Meme',
     addedBy: 'AdminUser#0001'
   });

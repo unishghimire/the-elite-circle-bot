@@ -27,12 +27,36 @@ export const internetFetcher = {
   async fetchBestInternetMeme() {
     const subreddit = MEME_SUBREDDITS[Math.floor(Math.random() * MEME_SUBREDDITS.length)];
     
-    // Method 1: Direct Reddit Top Feed (sorted by highest upvotes today)
+    // Method 1: High-speed Verified Meme API (Direct Reddit images, upvote-ranked)
+    try {
+      const apiRes = await axios.get(`https://meme-api.com/gimme/${subreddit}/5`, { timeout: 5000 });
+      if (apiRes.data?.memes?.length > 0) {
+        // Filter for safe, direct image URLs (.jpg, .png, .webp, .jpeg)
+        const safeMemes = apiRes.data.memes
+          .filter(m => !m.nsfw && m.url && !m.url.endsWith('.gifv'))
+          .sort((a, b) => (b.ups || 0) - (a.ups || 0));
+
+        if (safeMemes.length > 0) {
+          const best = safeMemes[0];
+          return {
+            title: best.title,
+            imageUrl: best.url,
+            caption: `⚡ Trending on r/${best.subreddit} • ${best.ups ? best.ups.toLocaleString() : '🔥'} upvotes`,
+            source: `r/${best.subreddit}`,
+            upvotes: best.ups || 0
+          };
+        }
+      }
+    } catch (err) {
+      // Fall through to Method 2
+    }
+
+    // Method 2: Direct Reddit Top JSON
     try {
       const redditRes = await axios.get(
-        `https://www.reddit.com/r/${subreddit}/top.json?t=day&limit=30`,
+        `https://www.reddit.com/r/${subreddit}/top.json?t=day&limit=25`,
         {
-          headers: { 'User-Agent': 'TheEliteCircleBot/2.0 (Discord Content Curator)' },
+          headers: { 'User-Agent': 'TheEliteCircleBot/2.0 (Discord Meme Curator)' },
           timeout: 5000
         }
       );
@@ -43,24 +67,16 @@ export const internetFetcher = {
           .filter(post => {
             if (!post || post.over_18 || post.is_video || post.stickied) return false;
             const url = post.url || '';
-            const isImage = /\.(jpg|jpeg|png|webp)$/i.test(url) || url.includes('i.redd.it') || url.includes('imgur.com');
-            const hasGoodUpvotes = (post.ups || 0) >= 300; // Only high quality / viral memes
-            return isImage && hasGoodUpvotes;
+            const isImage = /\.(jpg|jpeg|png|webp)$/i.test(url) || url.includes('i.redd.it') || url.includes('i.imgur.com');
+            return isImage && !url.endsWith('.gifv');
           });
 
         if (posts.length > 0) {
-          // Sort by highest upvotes descending to get the absolute BEST
           posts.sort((a, b) => b.ups - a.ups);
-          const topPost = posts[Math.floor(Math.random() * Math.min(posts.length, 5))];
-
-          let cleanUrl = topPost.url;
-          if (!/\.(jpg|jpeg|png|webp)$/i.test(cleanUrl) && topPost.thumbnail && topPost.thumbnail.startsWith('http')) {
-            cleanUrl = topPost.thumbnail;
-          }
-
+          const topPost = posts[0];
           return {
             title: topPost.title,
-            imageUrl: cleanUrl,
+            imageUrl: topPost.url,
             caption: `🔥 Trending on r/${subreddit} • ${topPost.ups.toLocaleString()} upvotes`,
             source: `r/${subreddit}`,
             upvotes: topPost.ups
@@ -68,31 +84,7 @@ export const internetFetcher = {
         }
       }
     } catch (err) {
-      // Fall through to Method 2 if Reddit rate-limits
-    }
-
-    // Method 2: High-speed Meme API fallback
-    try {
-      const apiRes = await axios.get(`https://meme-api.com/gimme/${subreddit}/10`, { timeout: 4000 });
-      if (apiRes.data?.memes?.length > 0) {
-        // Filter out NSFW and sort by upvotes
-        const safeMemes = apiRes.data.memes
-          .filter(m => !m.nsfw && m.url)
-          .sort((a, b) => (b.ups || 0) - (a.ups || 0));
-
-        if (safeMemes.length > 0) {
-          const best = safeMemes[0];
-          return {
-            title: best.title,
-            imageUrl: best.url,
-            caption: `⚡ Curated from r/${best.subreddit} • ${best.ups || '🔥'} upvotes`,
-            source: `r/${best.subreddit}`,
-            upvotes: best.ups || 0
-          };
-        }
-      }
-    } catch (err) {
-      // Return null so poster falls back to local database library
+      // Fallback to local
     }
 
     return null;

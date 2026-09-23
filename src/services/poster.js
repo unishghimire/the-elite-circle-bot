@@ -12,20 +12,22 @@ export const poster = {
 
     let meme = null;
 
-    // If options specify online, or randomly alternate between fresh trending internet memes and local library
-    const shouldCheckOnline = options.fetchOnline || (Math.random() < 0.5 && !options.localOnly);
-    
-    if (shouldCheckOnline) {
-      meme = await internetFetcher.fetchBestInternetMeme();
+    // 1. Always prioritize fresh trending internet meme from Reddit / Meme API
+    if (!options.localOnly) {
+      try {
+        meme = await internetFetcher.fetchBestInternetMeme();
+      } catch (err) {
+        console.warn('[Poster] Internet meme fetch error:', err.message);
+      }
     }
 
-    // Fallback to local database library if internet meme wasn't retrieved or if local preferred
-    if (!meme) {
+    // 2. Fallback to verified local library if internet fetch failed or localOnly
+    if (!meme || !meme.imageUrl || meme.imageUrl.includes('example.com')) {
       meme = db.getNextMeme();
     }
 
-    if (!meme) {
-      return { success: false, error: 'No memes available in library or internet' };
+    if (!meme || !meme.imageUrl) {
+      return { success: false, error: 'No valid memes available in library or internet' };
     }
 
     // Determine clean title & description without redundancy
