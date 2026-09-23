@@ -89,13 +89,6 @@ export const poster = {
       .setDescription(
         `>>> **"${motivation.quote}"**\n\n— *${motivation.author}*`
       )
-      .addFields(
-        {
-          name: '🧠 Daily Directive',
-          value: motivation.directive || 'Win your morning, protect your attention, and execute your highest leverage tasks first.',
-          inline: false
-        }
-      )
       .setFooter({
         text: `${config.branding.footerText} • Daily Dose (1x/Day)${isAiGenerated ? ' • 🤖 Gemini AI Curated' : ''}`,
         iconURL: config.branding.iconUrl
